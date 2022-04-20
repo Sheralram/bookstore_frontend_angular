@@ -1,0 +1,138 @@
+.book_text {
+    display : flex;
+    padding-top: 29px;
+    padding-inline-start: 139px;
+    font-size: 22px;
+    font-family: Roboto;
+ }
+ 
+
+.main_card {
+    
+    height:        297px;
+    width        : 207px;
+    background   : #FFFFFF 0% 0% no-repeat padding-box;
+    border       : 1px solid #E2E2E2;
+    border-radius: 3px;
+    opacity      : 1;
+    padding-top  : 0px;
+    cursor       : pointer;
+ }
+ 
+ .book_img {
+    height: 135px;
+    width : 87px;
+ }
+ 
+ .book_image {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    height          : 172px;
+    background-color: #F5F5F5;
+    margin-left     : -16px;
+    margin-right    : -16px;
+    margin-top      : 0px;
+ }
+ 
+.alinebody{
+   background-color: #388E3C;
+}
+ .body {
+    display      : flex;
+    flex-flow    : row wrap;
+    box-sizing   : border-box;
+    place-content: center;
+    align-items  : center;
+    gap          : 62px;
+    position: absolute;
+    padding: 36px 98px;
+ }
+ 
+
+ .book_name{
+    padding: 10px 0px 4px 0px;
+    font-family: 'Roboto';
+    font-size: 13px;
+    top: 327px;
+    left: 191px;
+    width: 130px;
+    height: 19px;
+
+ }
+ .author_name{
+   padding: 2px 0px 4px 0px;
+   font-family: "Roboto";
+   font-size: 13px;
+   text-align: left;
+ }
+ 
+
+ .rating{
+     color: #FFFFFF;
+ }
+
+ .rating-container {
+   display: flex;
+   font-family: Roboto;
+   margin-top: 15px;
+   font-size: 18px;
+   color: #373434;
+   .rating-box {
+       background-color: rgb(0, 155, 0);
+       font-size: 14px;
+       height: 16px;
+       width: 42px;
+       display: flex;
+       justify-items: center;
+       color: white;
+       padding: 3px;
+       padding-left: 5px;
+       border-radius: 3px;
+       padding-top: 4px;
+       margin-right: 15px;
+   }
+   .star {
+       margin-left: 5px;
+       font-size: 15px;
+   }
+}
+
+ .rating_num{
+   font-family: 'Roboto';
+   color: #FFFFFF;
+   
+ }
+
+ .rating_star{
+   color: #FFFFFF;
+   font-size: 10px;
+   height: 4px;
+   width: 10px; 
+ }
+ 
+ .quanty{
+   font: Roboto;
+   color: #878787;
+ }
+
+ .discount_price{
+   color: #878787;
+    font-size: 12px;
+    text-decoration: line-through;
+    padding-top: 12px;
+    padding-left: 8px;
+    font-family: Roboto;
+   }
+
+ .book_price{
+   font-size : 15px;
+   color    : #0A0102;
+   padding-top: 9px;
+   padding-left: 5px;
+   font-family: Roboto;
+ }
+ 
+ .price{
+    display: flex;
+ }

@@ -1,0 +1,59 @@
+<div style="height: 100%; width: 100%;">
+    <app-header-search [fullDisplay]="true"></app-header-search>
+    <div class="container">
+        <div class="greeting1">
+            <img src="\assets\images\greeting1.PNG" style="height: 8rem; width: 8rem;" />
+        </div>
+        <div class="message">
+            <span>Order Placed Successfully</span>
+        </div>
+        <div class="greeting1">
+            <img src="\assets\images\greeting 2.PNG" style="height: 5rem; width: 5rem; " />
+        </div>
+        <div class="greeting2" style="margin-top: 10px;">
+            <span class="message2">hurry!!!your order is confirmed</span>
+        </div>
+        <div class="greeting2">
+            <span class="message2">the order id is #123456 save the oreder id for</span>
+        </div>
+        <div class="greeting2">
+            <span class="message2">further Communication...</span>
+        </div>
+
+        <mat-card class="table">
+            <mat-card class="table-head">
+                <span>Email us</span>
+                <span>contact us</span>
+                <span>Address</span>
+            </mat-card>
+            <div class="table-content">
+                <div class="div1">
+                    <span class="content1">admin@bookstore.com</span>
+                </div>
+                <div class="div2"> <span class="content2">+91 8163475881</span></div>
+                <div class="div3"><span class="content3">42, 15th Cross & 14th Main Road, HSR Layout Sector 4 Opposite
+                        To HSR BDA Complex,Bengaluru, Karnataka 560102</span>
+                </div>
+            </div>
+        </mat-card>
+
+    </div>
+
+    <div style="
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          ">
+        <button mat-button style="
+              height: 45px;
+              width: 220px;
+              background-color: #3371b5;
+              color: whitesmoke;
+              border-radius: none;
+              font-family: Roboto;
+            " (click)="onClickClear()" routerLink="/booklist">
+            COUNTINUE SHOPPING
+        </button>
+    </div>
+    <app-footer class="footer"></app-footer>

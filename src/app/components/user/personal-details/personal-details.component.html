@@ -1,0 +1,71 @@
+<app-header-search [fullDisplay]="true"></app-header-search>
+<div class="containerforlink">
+    <span routerLink="/booklist">Home / </span>
+    <span>Profile</span>
+</div>
+
+<div class="main-container">
+    <span class="label">Personal details</span>
+    <span *ngIf="hidden" (click)="toggle()" class="edit">Edit</span>
+    <span *ngIf="display" (click)="toggle()" class="edit">Cancel</span>
+    <button *ngIf="display" (click)="onSumbitForPassword()" class="save">Save</button>
+
+    <div class="input-row">
+        <label class="label">Full Name</label>
+        <input class="input" disabled type="text" placeholder=" Enter full name" [(ngModel)]="usermodel.fullName">
+    </div>
+    <div class=" input-row">
+        <label class="label">Email Id</label>
+        <input class="input" disabled type="email" placeholder="Enter Email address" [(ngModel)]="usermodel.emailId">
+    </div>
+    <div class=" input-row">
+        <label class="label">Password</label>
+        <input class="input" type="password" placeholder=" Enter password" [(ngModel)]="usermodel.password">
+    </div>
+    <div class=" input-row">
+        <label class="label">Mobile Number</label>
+        <input class="input" disabled type="tel" placeholder=" Enter Mobile No" [(ngModel)]="usermodel.phoneNumber">
+    </div>
+
+    <div class="workrow">
+        <span class="worklabel">1.WORK</span>
+        <span *ngIf="hidden" (click)="toggle1()" class="edit">Edit</span>
+        <span *ngIf="display1" (click)="toggle1()" class="edit">Cancel</span>
+        <button *ngIf="display1" class="save2" (click)="onClickAddMyAddress()">Save</button>
+    </div>
+
+    <div class="input-row">
+
+        <label class="label">Address</label>
+        <input class="input2" type="tel" placeholder=" Enter your Address" [(ngModel)]="addressmodel.address">
+    </div>
+    <div class="input-row">
+        <label class="label">City/town</label>
+        <input class="input3" type="tel" placeholder=" Enter your City " [(ngModel)]="addressmodel.city">
+    </div>
+    <div class="typerow">
+
+        <div class="input-row2">
+            <label class="state">State</label>
+            <input class="input3" type="tel" placeholder=" Enter your State" [(ngModel)]="addressmodel.locality">
+        </div>
+    </div>
+    <div class="typerow">
+        <span>Type</span>
+    </div>
+
+    <div class="radio1" (click)="typeCall(1)">
+        <input type="radio" checked=type[0] id="home" name="type" value="1">
+        <label class="homes" for="home">Home</label><br>
+    </div>
+
+    <div class="radio2" (click)="typeCall(2)">
+        <input type="radio" x id="work" name="type" value="2">
+        <label class="homes" for="work">Work</label><br>
+    </div>
+    <div class="radio3" (click)="typeCall(3)">
+        <input type="radio" id="other" name="type" value="3">
+        <label class="other" for="other">Other</label>
+    </div>
+
+</div>

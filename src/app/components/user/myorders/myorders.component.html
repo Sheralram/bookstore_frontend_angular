@@ -1,0 +1,26 @@
+<app-header-search [fullDisplay]="true"></app-header-search>
+
+<div class="body">
+    <div class="containerforlink">
+        <span routerLink="/booklist">Home/</span>
+        <span routerLink="/myorders"> My Orders</span>
+
+    </div>
+    <div class="container" *ngFor="let book of Orders">
+        <div class="cart-book">
+            <div>
+                <img class="img" src="../../../../assets/images/Image 11.png">
+            </div>
+            <div class="book-info">
+                <div class="book-name"> {{book.bookList[0].name}}</div>
+                <div class="author">by: {{book.bookList[0].author}}</div>
+                <div class="price">
+                    <div class="book-price">Rs.{{book.totalPrice}}</div>
+                    <div class="discount-price">Rs.{{book.totalPrice - book.totalPrice*0.3}}</div>
+                </div>
+            </div>
+            <div class="order-placed">
+                {{book.registerDate}}  </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+<p>customer-order-summary works!</p>
+<app-header-search></app-header-search>
+
+<div class="main-container">
+    <div>
+        <span (click)="onClick()" [routerLink]="['']" class="home">Home/</span>
+        <span (click)="onClick()" [routerLink]="['']" class="cart">My Cart</span>
+    </div>
+    <mat-card class="card1">
+        <div>
+            <span class="title">My Cart(1)</span>
+            <div class="dropdown">
+                <button class="dropbtn"> <mat-icon class="icon"> location_on </mat-icon>Use Current Location</button>
+                <div class="dropdown-content">
+
+                </div>
+            </div>
+
+            <div>
+                <div class="book1">
+                    <img class="bookimg" src="assets/images/Image 11@2x.png" />
+                    <div>
+                        <div class="bookdetails">
+
+                            <div class="booktitle">
+                                Don't Make Me Think
+                            </div>
+                            <div class="sub">
+                                by Steve krug
+                            </div>
+                            <div class="price">
+                                Rs. 1500
+                                <div class="marked"><s>Rs.2000</s></div>
+                            </div>
+
+                            <div class="buttons">
+                                <button class="circle" (click)="null">-</button>
+                                <button class="square" (click)="null">1</button>
+                                <button class="circle" (click)="null">+</button>
+                                <span class="remove" (click)="remove()">Remove</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+    <mat-card class="card2">
+        <div class="info">
+            <span class="title2">Customer Details</span>
+            <button class="btncust" (click)="null">Add new User</button>
+            <div class="input-row">
+                <label class="label">Full Name</label>
+                <input class="input3" type="tel" placeholder=" Enter your Full Name ">
+            </div>
+            <div class="input-row2">
+                <label class="label">Mobile No</label>
+                <input class="input3" type="tel" placeholder=" Enter your Mobile No">
+            </div>
+            <div class="input-row">
+                <label class="label">Address</label>
+                <input class="input2" type="tel" placeholder=" Enter your Address">
+            </div>
+            <div class="input-row">
+                <label class="label">City/town</label>
+                <input class="input3" type="tel" placeholder=" Enter your City ">
+            </div>
+            <div class="input-row2">
+                <label class="label">State</label>
+                <input class="input3" type="tel" placeholder=" Enter your State">
+            </div>
+            <div class="type"><span>Type</span></div>
+            <div class="radio1">
+                <input type="radio" id="home" name="type" value="home">
+                <label class="homes" for="home">Home</label><br>
+            </div>
+            <div class="radio2">
+                <input type="radio" id="work" name="type" value="work">
+                <label class="work" for="work">Work</label><br>
+            </div>
+            <div class="radio3">
+                <input type="radio" id="other" name="type" value="other">
+                <label class="other" for="other">Other</label>
+            </div>
+            <button class="button2" (click)="null">CONTINUE</button>
+        </div>
+    </mat-card>
+    <mat-card style="height: 40px; border: 1px solid #DCDCDC; border-radius: 1px;
+ width: 752px; margin-top: 15px;">
+        <div>
+            <span class="title">Order Summary</span>
+        </div>
+       
+    </mat-card>
+</div>

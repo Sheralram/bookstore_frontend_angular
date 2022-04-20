@@ -1,0 +1,76 @@
+<app-header-search [fullDisplay]="true"></app-header-search>
+<div>
+    <div class="main-container">
+        <div class="containerforlink">
+            <span routerLink="/booklist">Home /</span>
+            <span class="h2"> My Wishlist</span>
+        </div>
+
+
+        <div class="card">
+            <!-- <mat-card class="card-main"> -->
+            <mat-card class="card2">
+                <h3 class="head">My Wishlist ({{wishlist.length}})</h3>
+            </mat-card>
+            <div class="container" *ngFor="let book of wishlist">
+                <div (click)=gotoBook(book.id) class="cart-book">
+                    <div>
+                        <img class="img" src="../../../../assets/images/Image 11.png">
+                    </div>
+                    <div class="book-info">
+                        <div class="book-name"> {{book.name}}</div>
+                        <div class="author">by: {{book.author}}</div>
+                        <div class="price">
+                            <div class="book-price">Rs.{{book.price}}</div>
+                            <div class="discount-price">Rs.{{book.markedPrice}}</div>
+                        </div>
+                    </div>
+                    <div class="order-placed">
+                        <mat-icon (click)="delete(book.id)" class="d1">delete</mat-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="cartdetails" style="margin-left: 2%;" fxLayout="row" fxLayoutAlign="start start">
+                        <div class="book1">
+                            <img class="bookimg" src="assets/images/Image 11@2x.png" />
+                            <div>
+                                <div class="bookdetails">
+
+                                    <div class="booktitle" style="word-wrap: break-word;">
+                                        Don't Make Me Think
+                                    </div>
+                                    <mat-icon class="d1">delete</mat-icon>
+
+                                    <div class="sub" style="word-wrap: break-word;">
+                                        by Steve krug
+                                    </div>
+                                    <div class="price" style="word-wrap: break-word;">
+                                        Rs. 1500
+                                    </div>
+
+                                </div>
+                                <div class="book1">
+                                    <img class="bookimg" src="\assets\images\Image 36@2x.png" />
+                                    <div>
+                                        <div class="bookdetails">
+
+                                            <div class="booktitle" style="word-wrap: break-word;">
+                                                React Material-Ui
+                                            </div>
+                                            <mat-icon class="d1">delete</mat-icon>
+
+                                            <div class="sub" style="word-wrap: break-word;">
+                                                by Cook book
+                                            </div>
+                                            <div class="price" style="word-wrap: break-word;">
+                                                Rs. 780
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+            <!-- </mat-card> -->
+        </div>
+    </div>

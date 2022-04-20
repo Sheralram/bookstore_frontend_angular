@@ -1,0 +1,129 @@
+<app-header-search [fullDisplay]="true"></app-header-search>
+
+<div class="main-container">
+    <div>
+        <span routerLink="/booklist" class="home">Home/</span>
+        <span class="cart">My Cart({{cartlist.length}})</span>
+    </div>
+    <!-- <span class="title">My Cart({{cartlist.length}})</span> -->
+    <mat-card *ngFor="let bookObj of cartlist" class="card1">
+        <div>
+            <div>
+                <div class="book1">
+                    <img class="bookimg" src="{{bookObj.book.img}}" />
+                    <div>
+                        <div class="bookdetails">
+
+                            <div class="booktitle">
+                                {{bookObj.book.name}}
+                            </div>
+                            <div class="sub">
+                                by {{bookObj.book.author}}
+                            </div>
+                            <div class="price">
+                                Rs. {{bookObj.book.price}}
+                                <div class="marked"><s>Rs.{{bookObj.book.markedPrice}}</s></div>
+                            </div>
+
+                            <div class="buttons">
+                                <button class="circle"
+                                    (click)="removeOneBook(bookObj.book.id, bookObj.quantity)">-</button>
+                                <span class="square">{{bookObj.quantity}}</span>
+                                <button class="circle"
+                                    (click)="addOneBook(bookObj.book.id, bookObj.quantity)">+</button>
+                                <span class="remove" (click)="remove(bookObj.book.id)">Remove</span>
+
+                                <button (click)="customerSection=true" class="place-order" > Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+    <mat-accordion>
+        <mat-expansion-panel *ngIf="customerSection" class="forcard">
+            <mat-expansion-panel-header>
+                Customer Details
+            </mat-expansion-panel-header>
+            <mat-card  class="card2">
+                <div class="info">
+                    <span class="title2">Customer Details</span>
+                    <div class="input-row">
+                        <label class="label" >Full Name</label>
+                        <input class="input3" [(ngModel)]="addressModel.name" type="text" placeholder=" Enter your Full Name ">
+                    </div>
+                    <div class="input-row2">
+                        <label class="label">Mobile Number</label>
+                        <input class="input3" [(ngModel)]="addressModel.pincode" type="tel" placeholder=" Enter your Mobile Number">
+                    </div>
+                    <div class="input-row">
+                        <label class="label">Address</label>
+                        <input class="input2" [(ngModel)]="addressModel.address" type="text" placeholder=" Enter your Address">
+                    </div>
+                    <div class="input-row">
+                        <label class="label">City/town</label>
+                        <input class="input3" [(ngModel)]="addressModel.city" type="text" placeholder=" Enter your City ">
+                    </div>
+                    <div class="input-row2">
+                        <label class="label">State</label>
+                        <input class="input3" [(ngModel)]="addressModel.locality" type="text" placeholder=" Enter your State">
+                    </div>
+                    <div class="type"><span>Type</span></div>
+                    <div class="radio" >
+                        <div class="radio1" (click)="typeCall(1)" >
+                            <input type="radio" checked=type[0] id="home" name="type" value="1">
+                            <label class="homes" for="home">Home</label><br>
+                        </div>
+                        <div class="radio2" (click)="typeCall(2)">
+                            <input type="radio" x id="work" name="type" value="2">
+                            <label class="homes" for="work">Work</label><br>
+                        </div>
+                        <div class="radio2" (click)="typeCall(3)">
+                            <input type="radio"  id="other" name="type" value="3">
+                            <label class="homes" for="other">Other</label>
+                        </div>
+                    </div>
+                    <button (click)="addressTypeSave()" class="continue"> continue</button>
+
+                </div>
+            </mat-card>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion >
+        <mat-expansion-panel *ngIf="summarySection" class="forcard">
+            <mat-expansion-panel-header>
+                Order Summary
+            </mat-expansion-panel-header>
+            <mat-card class="card1">
+                <div>
+                    <span class="title">Order Summary</span>
+                </div>
+                <div>
+                    <div class="book1">
+                        <img class="bookimg" src="{{cartlist[0].book.img}}" />
+                        <div>
+                            <div class="bookdetails">
+
+                                <div class="booktitle">
+                                    {{cartlist[0].book.name}} <div *ngIf="cartlist.length>1">+{{cartlist.length-1}}
+                                    </div>
+                                </div>
+                                <div class="sub">
+
+                                </div>
+                                <div class="price">
+                                    Rs. {{totalPrice}}
+                                    <div class="marked"><s>Rs. {{markedPrice}}</s></div>
+                                </div>
+                            </div>
+                            <button class="checkout" (click)="placeOrder()">Checkout</button>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </mat-card>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

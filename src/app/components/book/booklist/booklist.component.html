@@ -1,0 +1,42 @@
+<app-header-search [fullDisplay]="true" (searchEvent)="receiveBookName($event)"></app-header-search>
+<h1>WELCOME</h1>
+<div class="book_text">
+    <div>
+        <span>Books</span>
+        <span style="font-size: 12px; color: grey; padding-top: 9px ;padding-inline-start: 6px;">
+            ({{Books.length}})</span>
+    </div>
+</div>
+<div class="alinebody">
+    <div class="body">
+
+        <mat-card class="main_card" *ngFor="let book of Books">
+            <div (click)="onClick(book.id)">
+                <div class=" book_image">
+                    <img src="{{book.img}}" alt="book" class="book_img">
+                </div>
+
+                <div class="book_name">
+                    {{book.name}}
+                </div>
+                <div class="author_name">
+                    {{book.author}}
+                </div>
+                <div class="rating-container">
+                    <div class="rating-box">
+                        {{book.rating}}
+                        <mat-icon class="star">star</mat-icon>
+                    </div>
+                </div>
+
+                <div class="price">
+                    <div class="book_price">Rs.{{book.price}}</div>
+                    <div class="discount_price">Rs.{{book.price}}</div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+
+<!-- <app-footer></app-footer> -->

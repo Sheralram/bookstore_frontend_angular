@@ -1,0 +1,107 @@
+<app-header-search [fullDisplay]="true"></app-header-search>
+<div class="body">
+    <div class="path">Home / <div class="bookId">&nbsp; Book({{book.id}})</div>
+    </div>
+    <div class="main">
+        <div class="side-img-container">
+            <div class="side-img-box">
+                <img class="side-img" src="../../../../assets/images/Image 1.png" alt="">
+            </div>
+            <div class="side-img-box">
+                <img class="side-img" src="../../../../assets/images/Image 46.png" alt="">
+
+            </div>
+        </div>
+        <div class="main-img-container">
+            <div class="main-img-box">
+
+                <img class="main-img" src="{{book.img}}" alt="">
+            </div>
+            <div class="bag-wishlist-row">
+                <button class="add-to-bag-button" (click)="onClickAddToBag()">
+                    ADD TO BAG
+                </button>
+                <button class="add-to-wishlist" (click)="onClickAddToWishList()">
+                    <mat-icon class="favorite">favorite</mat-icon>
+                    WISHLIST
+                </button>
+            </div>
+        </div>
+        <div class="book-details">
+            <div class="head-details">
+                <div class="title">{{book.name}}</div>
+                <div class="author">by {{book.author}}</div>
+                <div class="rating-container">
+                    <div class="rating-box">
+                        {{book.rating}}
+                        <mat-icon class="star">star</mat-icon>
+                    </div>
+                    <div class="rating-count">(20)</div>
+                </div>
+                <div class="price">Rs {{book.price}} <div class="marked"><s>{{book.markedPrice}}</s></div>
+                </div>
+            </div>
+            <div class="description-box">
+                <ul class="para">
+                    <li>
+                        <div class="para-header">
+                            Book Details
+                        </div>
+                    </li>
+                    <div class="para">
+                        {{book.description}}
+
+                    </div>
+                </ul>
+            </div>
+            <div class="feedback">
+                <div class="feedback-header">
+                    Customer Feedback
+                </div>
+                <div class="feedback-form">
+                    <div class="ovarall-rating">
+                        Overall rating
+                    </div>
+                    <div class="star-rating">
+                        <mat-icon class="star">star_border</mat-icon>
+                        <mat-icon class="star">star_border</mat-icon>
+                        <mat-icon class="star">star_border</mat-icon>
+                        <mat-icon class="star">star_border</mat-icon>
+                        <mat-icon class="star">star_border</mat-icon>
+                    </div>
+                    <div class="feedback-comment">
+                        Write your review
+                    </div>
+                    <div class="feedback-submit">
+                        <button class="submit">Submit</button>
+
+                    </div>
+                </div>
+                <div class="past-feedback">
+                    <div class="symbol">
+                        AK
+                    </div>
+                    <div class="details">
+                        <div class="name">
+                            Aniket Kumar
+                        </div>
+                        <div class="stars">
+                            <mat-icon class="star">star</mat-icon>
+                            <mat-icon class="star">star</mat-icon>
+                            <mat-icon class="star">star</mat-icon>
+                            <mat-icon class="star">star_border</mat-icon>
+                            <mat-icon class="star">star_border</mat-icon>
+
+                        </div>
+                        <div class="review">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

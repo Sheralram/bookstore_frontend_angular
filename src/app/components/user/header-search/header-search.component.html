@@ -1,0 +1,37 @@
+<div class="header">
+    <div class="row-head">
+        <div class="logo">
+            <img src="../../../../assets/images/education.svg" class="image">
+        </div>
+        <span routerLink="/booklist" class="bookstore">Bookstore</span>
+        <form>
+            <input *ngIf="fullDisplay" (keyup.enter)="isSerarch()" [(ngModel)]="bookName" class="search" type="text" placeholder="Search..." name="search">
+        </form>
+        <div *ngIf="fullDisplay" class="person" [matMenuTriggerFor]="menu">
+            <mat-icon>person</mat-icon>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/personal-details">
+                    <mat-icon>person</mat-icon> Profile
+                </button>
+                <button mat-menu-item routerLink="/myorders">
+                    <mat-icon> local_grocery_store</mat-icon>My Order
+                </button>
+                <button mat-menu-item routerLink="/wishlist">
+                    <mat-icon>favorite</mat-icon>My Wishlist
+                </button>
+                <button mat-menu-item>
+                    <div (click)=onLogout() class="logout">
+                        <mat-icon>cancel</mat-icon>Logout
+                    </div>
+                </button>
+            </mat-menu>
+            <span class="label">Person</span>
+
+
+        </div>
+        <div *ngIf="fullDisplay" routerLink="/mycart" class="cart">
+            <mat-icon>shopping_cart</mat-icon>
+            <span class="label">Cart</span>
+        </div>
+    </div>
+</div>
